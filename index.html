@@ -27,31 +27,33 @@
         <h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>what is apitext?</h3>
 
-<p></p>Apitext is a prototype Application Programing Interface (API) for TEI-XML Transcriptions. Once installed on your website, it It exposes a series of Uniform Resource Identifiers (URI). By using these endpoints a user can retrieve specific information from a TEI-XML file. Currently, our experimental prototype can only manage one TEI-XML file at a time and only supports URI requests from the same domain as the API itself. Future iterations of the prototype intend to address these functionality challenges.</p>
+<p>Apitext is a prototype RESTful Application Programing Interface (API) for TEI-XML Transcriptions. Once installed on your website, it It exposes a series of Uniform Resource Identifiers (URI). By using these identifier endpoints, a user can retrieve specific information from a TEI-XML file. Currently, our experimental student built prototype can only manage one TEI-XML file at a time and only supports URI requests from the same domain as the API itself. Future iterations of the prototype intend to address these functionality challenges.</p>
 
-It’s probably easier to show you what our API does, rather than tell you about it. Check out a live demonstration of apitext here.
+<p>It's probably easier to show you what our API does, rather than tell you about it. Check out a live demonstration of apitext <a href="">here</a>.</p>
 
 <h3>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>how do I install apitext?</h3>
 
 <ol>
-	<li>Download the compressed apitext file folder <a href="https://github.com/apitext/apitext_api/archive/master.zip">here</a>.</li>
-	<li>Unzip the contents of the file.</li>
-	<li>Modify the file name (remove the "-master" at the end of the file.</li>
-	<li>Modify the contents of the "config.json" file.</li>
-	<li>Using the FTP program of your choice, place the API folder inside the folder that you want it to control.</li>
-	<li>Move the ".htaccess" file outside the API folder.</li>
+	<li>You need to have a website capable of running PHP scripts.</li>
+	<li>In order for apitext to work, you will need to designate a folder on your website that will hold your TEI-XML file.</li>
+	<li>You will need to install apitext into that TEI-XML folder.</li>
+	<ul>
+		<li>If you are familiar with Github, you can clone the apitext repository <a href="https://github.com/apitext/apitext_api">here</a>.</li>
+		<li>You can also download a zipped version of the repository <a href="https://github.com/apitext/apitext_api/archive/master.zip">here</a>.</li>
+		<ul>
+			<li>Please note, if you choose this option, you will need to open the folder inside the newly unzipped folder and change that folder name from [apitext_api-master] to [apitext_api].</li>
+			<li>You will then need to move that folder into your TEI-XML folder.</li>
+		</ul>
+		<li>When finished your TEI-XML directory should look like this: [illustration]</li>
+	</ul>
+	<li>You will then need to move the [.htaccess] file from the [apitext_api] folder to [your TEI-XML] directory.</li>
+	You will then need to edit the [config.json] file located inside the [apitext_api] folder.
+	In the [teiFolder] entry put the name of your TEI-XML folder.
+	In the [teiFile] entry put the name of your TEI-XML file.
+	If your folder was named [my-tei-folder] and your file was named [my-tei-xml-file.xml], then your [config.json] file would look like this: [illustration]
+	<li>That's it, the API should now be controlling your TEI-XML folder. Use a web browser to navigate to your file folder, you should see a welcome message.</li>
 </ol>
-
-<h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>how do I use apitext?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>what is the future of the project?</h3>
-
-<p>Curabitur eu hendrerit lorem, vel ullamcorper enim. Maecenas lacinia porta pretium. Vivamus a purus gravida, vestibulum justo eu, interdum velit. Etiam ullamcorper in libero non varius. Aliquam sit amet orci eleifend, accumsan ipsum vitae, tincidunt tortor. Ut non euismod dui, quis cursus massa. Suspendisse interdum erat id nunc maximus, quis pharetra tortor egestas. Fusce odio est, accumsan sed ligula vitae, bibendum condimentum libero. Donec aliquet nunc est, convallis fringilla dui blandit ut. Quisque condimentum eros ut urna accumsan, id eleifend purus tempor. Proin augue libero, rhoncus ut ultrices ut, accumsan vitae libero. Ut tempus metus sed commodo eleifend. Donec vitae efficitur nulla, ac semper turpis. Integer nec magna non libero congue sagittis sit amet ut nunc. Curabitur pulvinar purus in tristique ullamcorper. Praesent euismod turpis hendrerit congue posuere.</p>
 
 <h3>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>what is an API?</h3>
