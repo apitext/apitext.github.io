@@ -42,16 +42,26 @@
 		<li>If you are familiar with Github, you can clone the apitext repository <a href="https://github.com/apitext/apitext_api">here</a>.</li>
 		<li>You can also download a zipped version of the repository <a href="https://github.com/apitext/apitext_api/archive/master.zip">here</a>.</li>
 		<ul>
-			<li>Please note, if you choose this option, you will need to open the folder inside the newly unzipped folder and change that folder name from <code>apitext_api-master</code> to [apitext_api].</li>
+			<li>Please note, if you choose this option, you will need to open the folder inside the newly unzipped folder and change that folder name from <code>apitext_api-master</code> to <code>apitext_api</code>.</li>
 			<li>You will then need to move that folder into your TEI-XML folder.</li>
 		</ul>
-		<li>When finished your TEI-XML directory should look like this: [illustration]</li>
+		<li>When finished your TEI-XML directory should be organized like this:<br>
+			<img src="images/directory.png"/>
+		</li>
 	</ul>
-	<li>You will then need to move the [.htaccess] file from the [apitext_api] folder to [your TEI-XML] directory.</li>
-	You will then need to edit the [config.json] file located inside the [apitext_api] folder.
-	In the [teiFolder] entry put the name of your TEI-XML folder.
-	In the [teiFile] entry put the name of your TEI-XML file.
-	If your folder was named [my-tei-folder] and your file was named [my-tei-xml-file.xml], then your [config.json] file would look like this: [illustration]
+	<li>You will then need to move the <code>.htaccess</code> file outside of the <code>apitext_api</code> folder to.</li>
+	<li>You will then need to edit the <code>config.json</code> file located inside the <code>apitext_api</code> folder.</li>
+	<ul>
+		<li>In the <code>teiFolder</code> entry put the name of your TEI-XML folder.</li>
+		<li>In the <code>teiFile</code> entry put the name of your TEI-XML file.</li>
+		<li>As an example, if your folder was named <code>my-tei-folder</code> and your file was named <code>my-tei-xml-file.xml</code>, then your <code>config.json</code> file would look like this:
+		<pre><code>
+{
+  "teiFolder": "my-tei-folder",
+  "teiFile" : "my-tei-xml-file.xml"
+}
+		</code></pre></</li>
+	</ul>
 	<li>That's it, the API should now be controlling your TEI-XML folder. Use a web browser to navigate to your file folder, you should see a welcome message.</li>
 </ol>
 
