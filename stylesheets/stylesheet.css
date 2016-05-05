@@ -291,6 +291,11 @@ Full-Width Styles
   color: #fff;
   font-size: 48px;
   font-weight: 100;
+  display:inline;
+}
+
+.logo {
+	vertical-align: -40%;
 }
 
 #project_tagline {
