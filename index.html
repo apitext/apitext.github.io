@@ -23,87 +23,93 @@
 	</div>
 
 
-<div id="main_content_wrap" class="outer">
-	<section id="main_content" class="inner">
+	<div id="main_content_wrap" class="outer container">
+		<section id="main_content" class="inner">
 
-	<h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>what is apitext?</h3>
+		<h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>what is apitext?</h3>
 
-	<p>Apitext is a prototype RESTful Application Programing Interface (API) for TEI-XML Transcriptions. Once uploaded to a TEI-XML folder on your website, it exposes a series of Uniform Resource Identifiers (URI). By using these identifier endpoints, a user can retrieve specific information from a TEI-XML file.</p>
-	
-	<img src="images/infographic_apitext.png"/>
-	
-	<p>Currently, our student built experimental prototype only manages one TEI-XML file at a time and only supports URI requests from the same domain as the API itself. Future iterations of this prototype intend to:</p>
-	
-	<ul>
-		<li>allow control over un unlimited set of TEI-XML files</li>
-		<li>provide a more robust catalogue of view types</li>
-		<li>support Cross-origin resource sharing (CORS)</li>
-		<li>support static API resource generation</li>
-		<li>support TEI-XML schema validation</li>
-	</ul>
-
-	<p>It's probably easier to show you what our API does, rather than tell you about it. Check out a live demonstration of apitext <a href="">here</a>.</p>
-
-	<h3><a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>how do I install apitext?</h3>
-
-	<ol>
-		<li>You will need to have a website capable of running PHP scripts.</li>
-		<li>In order for apitext to work, you will need to designate a folder on your website that will hold your TEI-XML file.</li>
-		<li>You will need to upload apitext into that folder.</li>
+		<p>Apitext is a prototype RESTful Application Programing Interface (API) for TEI-XML Transcriptions. Once uploaded to a TEI-XML folder on your website, it exposes a series of Uniform Resource Identifiers (URI). By using these identifier endpoints, a user can retrieve specific information from a TEI-XML file.</p>
+		
+		<img class="infographic" src="images/infographic_apitext.png"/>
+		
+		<p>Currently, our student built experimental prototype only manages one TEI-XML file and only supports URI requests from the same domain as the API itself. Future iterations of this prototype intend to:</p>
+		
 		<ul>
-			<li>You can clone or download the apitext repository <a href="https://github.com/apitext/apitext_api">here</a>.</li>
-			<li>Once uploaded your TEI-XML directory should be organized like this:<br>
-				<img src="images/directory.png"/>
+			<li>allow control over un unlimited set of TEI-XML files</li>
+			<li>provide a more robust catalogue of view types</li>
+			<li>support Cross-Origin Resource Sharing (CORS)</li>
+			<li>support static API resource generation</li>
+			<li>support TEI-XML schema validation</li>
+		</ul>
+
+		<p>It's probably easier to show you what our API does, rather than tell you about it. Check out a live demonstration of apitext <a href="">here</a>.</p>
+
+		<h3><a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>how do I install apitext?</h3>
+
+		<ol>
+			<li>You will need to have a website capable of running PHP scripts.</li>
+			<li>In order for apitext to work, you will need to designate a folder on your website that will hold your TEI-XML file.</li>
+			<li>You will need to upload apitext into that folder.</li>
+			<ul>
+				<li>You can clone or download the apitext repository <a href="https://github.com/apitext/apitext_api">here</a>.</li>
+				<li>Note: If you choose to download the apitext repository from Github:</li>
+				<ol>
+					<li>You will need extract the base repository folder from the unzipped folder (when zipping files, Github creates a folder inside a folder).</li>
+					<li>You will need to remove the <code>-master</code> from the end of the base folder's name (when zipping files, Github adds "-masster" to the end of the repository name).</li>
+				</ol>
+			</ul>
+			<li>You will then need to move the <code>.htaccess</code> file outside of the <code>apitext_api</code> folder.</li>
+			<li>Once finished your TEI-XML directory should be organized like this:<br>
+				<img class="infographic" src="images/directory.png"/>
 			</li>
-		</ul>
-		<li>You will then need to move the <code>.htaccess</code> file outside of the <code>apitext_api</code> folder.</li>
-		<li>You will then need to edit the <code>config.json</code> file located inside the <code>apitext_api</code> folder.</li>
-		<ul>
-			<li>In the <code>teiFolder</code> entry put the name of your TEI-XML folder.</li>
-			<li>In the <code>teiFile</code> entry put the name of your TEI-XML file.</li>
-			<li>As an example, if your folder was named <code>my-tei-folder</code> and your file was named <code>my-tei-xml-file.xml</code>, then your <code>config.json</code> file would look like this:
-			<pre><code>
-		{
-		"teiFolder": "my-tei-folder",
-		"teiFile" : "my-tei-xml-file.xml"
-		}
-			</code></pre></</li>
-		</ul>
-		<li>That's it, the API should now be controlling your TEI-XML folder. Use a web browser to navigate to your file folder, you should see a welcome message.</li>
-	</ol>
-	
-	<h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>how do I use apitext?</h3>
-	
-	<p>Right now, apitext supports the following URI endpoints:</p>
-	
-	<dl>
-		<dt>http://chrissumption.com/sandbox/sample_tei_project/<code>api/v1/resources</code></dt>
-		<dd>Returns a welcome message and a link to the Resources endpoint.</dd>
+			<li>You will then need to edit the <code>config.json</code> file located inside the <code>apitext_api</code> folder.</li>
+			<ul>
+				<li>In the <code>teiFolder</code> entry put the name of your TEI-XML folder.</li>
+				<li>In the <code>teiFile</code> entry put the name of your TEI-XML file.</li>
+				<li>As an example, if your folder was named <code>my-tei-folder</code> and your file was named <code>my-tei-xml-file.xml</code>, then your <code>config.json</code> file would look like this:
+				<pre><code class="json">
+{
+ "teiFolder": "my-tei-folder",
+ "teiFile" : "my-tei-xml-file.xml"
+}
+				</code></pre></</li>
+			</ul>
+			<li>That's it, the API should now be controlling your TEI-XML folder. Use a web browser to navigate to your file folder, you should see a welcome message.</li>
+		</ol>
 		
-		<dt>http://chrissumption.com/sandbox/sample_tei_project/api/v1/xml</dt>
-		<dd>Returns the TEI-XML view of the TEI-XML file.</dd>
+		<h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>how do I use apitext?</h3>
 		
-		<dt>http://chrissumption.com/sandbox/sample_tei_project/api/v1/text</dt>
-		<dd>Returns a text only view of the tei-xml file.</dd>
+		<p>Right now, apitext supports the following URI endpoints. To utilize an endpoint, just place it at the end of the URL path of your TEI folder (example: http://your-site.com/your-tei/api/v1/resources); </p>
 		
-		<dt>http://chrissumption.com/sandbox/sample_tei_project/api/v1/markup</dt>
-		<dd>Returns a markup only (html) view of the tei-xml file.</dd>
+		<dl>
+			<dt><code>api/v1/resources</code></dt>
+			<dd>Returns a welcome message and a link to the Resources endpoint.</dd>
+			
+			<dt><code>api/v1/xml</code></dt>
+			<dd>Returns the TEI-XML view of the TEI-XML file.</dd>
+			
+			<dt><code>/api/v1/text</code></dt>
+			<dd>Returns a text only view of the tei-xml file.</dd>
+			
+			<dt><code>api/v1/markup</code></dt>
+			<dd>Returns a markup only (html) view of the tei-xml file.</dd>
+			
+			<dt><code>api/v1/elements</code></dt>
+			<dd>Returns a listing of all elements contained within the tei-xml file.</dd>
+			
+			<dt><code>api/v1/annotations</code></dt>
+			<dd>Returns a listing of all annotation elements contained within the tei-xml file.</dd>
+			
+			<dt><code>api/v1/teiheaders</code></dt>
+			<dd>Returns a listing of all teiheader elements contained within the tei-xml file.</dd>
+			
+		</dl>
 		
-		<dt>http://chrissumption.com/sandbox/sample_tei_project/api/v1/elements</dt>
-		<dd>Returns a listing of all elements contained within the tei-xml file.</dd>
+		<h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>project background</h3>
+		<p>The apitext api was directly inspired by <a href="https://jtei.revues.org/979">this journal article</a> written by <a href ="https://jtei.revues.org/979#authors">Desmond Schmidt</a>.</p>
 		
-		<dt>http://chrissumption.com/sandbox/sample_tei_project/api/v1/annotations</dt>
-		<dd>Returns a listing of all annotation elements contained within the tei-xml file.</dd>
-		
-		<dt>http://chrissumption.com/sandbox/sample_tei_project/api/v1/teiheaders</dt>
-		<dd>Returns a listing of all teiheader elements contained within the tei-xml file.</dd>
-		
-	</dl>
-	
-	<h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>project background</h3>
-	
-</section>
-</div>
+		</section>
+	</div>
 
 	<div id="footer_wrap" class="outer">
 		<footer class="inner">

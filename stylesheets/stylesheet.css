@@ -365,52 +365,35 @@ Full-Width Styles
 Small Device Styles
 *******************************************************************************/
 
-@media screen and (max-width: 480px) {
-  body {
-    font-size:14px;
-  }
+@media screen and (max-width: 650px) {
+	body {
+		font-size:16px;
+	}
 
-  #downloads {
-    display: none;
-  }
+	#downloads {
+		display: none;
+	}
 
-  .inner {
-    min-width: 320px;
-    max-width: 480px;
-  }
+	.inner {
+		min-width: 320px;
+		max-width: 580px;
+	}
 
-  #project_title {
-  font-size: 32px;
-  }
+	code, pre {
+		min-width: 250px;
+		max-width: 580px;
+	}
 
-  h1 {
-    font-size: 28px;
-  }
+	.json {
+		font-size:11px;
+	}
 
-  h2 {
-    font-size: 24px;
-  }
+	.infographic {
+		width:300px;
+	}
 
-  h3 {
-    font-size: 21px;
-  }
-
-  h4 {
-    font-size: 18px;
-  }
-
-  h5 {
-    font-size: 14px;
-  }
-
-  h6 {
-    font-size: 12px;
-  }
-
-  code, pre {
-    min-width: 320px;
-    max-width: 480px;
-    font-size: 11px;
-  }
+	#project_tagline {
+		font-size: 18px;
+	}
 
 }
