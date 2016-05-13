@@ -114,3 +114,7 @@
   color: #1d3e81;
 }
 
+.btn btn-default dropdown-toggle {
+  float: right;
+}
+
