@@ -398,7 +398,7 @@ Small Device Styles
 	}
 
 	.infographic {
-		width:300px;
+		width:100%;
 	}
 
 	#project_tagline {
@@ -406,7 +406,7 @@ Small Device Styles
 	}
 	
 	.video {
-		width:300px;
+		width:100%;
 		height:150px;
 	}
 
