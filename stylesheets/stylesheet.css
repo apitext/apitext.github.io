@@ -278,6 +278,7 @@ Full-Width Styles
 }
 
 #header_wrap {
+	padding-top: 45px;
   background: #212121;
   background: -moz-linear-gradient(top, #373737, #212121);
   background: -webkit-linear-gradient(top, #373737, #212121);
@@ -356,7 +357,7 @@ Full-Width Styles
 }
 
 #main_content {
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
 #footer_wrap {
@@ -368,6 +369,43 @@ Full-Width Styles
 }
 .infographic {
     width:100%;
+}
+
+.anchor{
+	padding-top:60px;
+	margin-top:-60px;
+}
+
+.page_content{
+	padding-top:30px;
+}
+
+.search_field{
+	display: flex;
+	margin-top:45px;
+	margin-bottom:0px;
+}
+
+.request{
+	display: flex;
+	width: 750px;
+	font-size: 175%;
+	border: 2px solid #585858;
+	background: #fff;
+}
+
+#response{
+	font-size: 115%;
+}
+
+#response pre{
+	font-size: 115%;
+}
+
+.demo-button{
+	margin-top: 5px;
+	width: 125px;
+	height: 60px;
 }
 
 
@@ -400,6 +438,10 @@ Small Device Styles
 
 	#project_tagline {
 		font-size: 18px;
+	}
+	
+	.file-directory{
+		width: 75%;
 	}
 
 }
