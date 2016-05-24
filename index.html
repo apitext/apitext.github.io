@@ -54,11 +54,11 @@
 			<p>Currently, our student built experimental prototype only manages one TEI-XML file and only supports URI requests from the same domain as the API itself. Future iterations of this prototype intend to:</p>
 			
 			<ul>
-				<li>allow control over un unlimited set of TEI-XML files</li>
-				<li>provide a more robust catalogue of view types</li>
-				<li>support Cross-Origin Resource Sharing (CORS)</li>
-				<li>support static API resource generation</li>
-				<li>support TEI-XML schema validation</li>
+				<li>Provide a more robust catalogue of view types</li>
+				<li>Allow control over an unlimited set of TEI-XML files</li>
+				<li>Support TEI-XML schema validation</li>
+				<li>Support static API resource generation</li>
+				<li>Support Cross-Origin Resource Sharing (CORS)</li>
 			</ul>
 
 			<p>It's probably easier to show you what our API does, rather than tell you about it. Check out a live demonstration of apitext <a href="">here</a>.</p>
@@ -74,7 +74,7 @@
 					<li>Note: If you choose to download the apitext repository from Github:</li>
 					<ol>
 						<li>You will need extract the base repository folder from the unzipped folder (when zipping files, Github creates a folder inside a folder).</li>
-						<li>You will need to remove the <code>-master</code> from the end of the base folder's name (when zipping files, Github adds "-masster" to the end of the repository name).</li>
+						<li>You will need to remove the <code>-master</code> from the end of the base folder's name (when zipping files, Github adds "-master" to the end of the repository name).</li>
 					</ol>
 				</ul>
 				<li>You will then need to move the <code>.htaccess</code> file outside of the <code>apitext_api</code> folder.</li>
@@ -102,33 +102,53 @@
 			
 			<dl>
 				<dt><code>api/v1/resources</code></dt>
-				<dd>Returns a welcome message and a link to the Resources endpoint.</dd>
+				<dd>Returns a listing of all available endpoints for the API.</dd>
 				
 				<dt><code>api/v1/xml</code></dt>
-				<dd>Returns the TEI-XML view of the TEI-XML file.</dd>
+				<dd>Returns the XML view of the TEI-XML file.</dd>
 				
-				<dt><code>/api/v1/text</code></dt>
-				<dd>Returns a text only view of the tei-xml file.</dd>
+				<dt><code>api/v1/text</code></dt>
+				<dd>Returns a text only view of the TEI-XML file.</dd>
 				
 				<dt><code>api/v1/markup</code></dt>
-				<dd>Returns a markup only (html) view of the tei-xml file.</dd>
+				<dd>Returns a markup only (HTML) view of the TEI-XML file.</dd>
 				
 				<dt><code>api/v1/elements</code></dt>
-				<dd>Returns a listing of all elements contained within the tei-xml file.</dd>
+				<dd>Returns a listing of all elements contained within the TEI-XML file.</dd>
 				
 				<dt><code>api/v1/elements/[specific element]</code></dt>
-				<dd>Returns a unique listing of all the textual elements contained within the [specific element].</dd>
+				<dd>Returns a unique listing of all the textual content contained within the [specific element(s)].</dd>
 				
 				<dt><code>api/v1/annotations</code></dt>
-				<dd>Returns a listing of all annotation elements contained within the tei-xml file.</dd>
+				<dd>Returns a listing of all annotation elements contained within the TEI-XML file.</dd>
 				
 				<dt><code>api/v1/teiheaders</code></dt>
-				<dd>Returns a listing of all teiheader elements contained within the tei-xml file.</dd>
+				<dd>Returns a listing of all teiheader elements contained within the TEI-XML file.</dd>
 				
 			</dl>
 			
 			<h3 id="about" class="anchor">about the project</h3>
-			<p>For over twenty years the Text Encoding Initiative (TEI) has managed and developed a set of encoding guidelines for the representation of humanities, social science, and linguistics -- to preserve and share -- texts in digital form. Using the Extensible Markup Language (XML) as its backbone, TEI is the generally accepted encoding model for the digital humanities. Due to XML’s extensible nature, It can often be difficult to share these files and even more problematic to make them interoperable. The goal of our student project was to build a prototype Application Programming Interface (API) for TEI-XML documents that provides greater interoperability while at the same time is easy to use by an audience with backgrounds in the humanities, social sciences, and linguistics. Currently, we have produced an API that, once uploaded to a directory containing TEI-XML files, can return multiple views of that file using a Uniform Resource Identifier (URI) as its query method. In future iterations of our prototype we plan to: allow control over an unlimited set of TEI-XML files, provide a more robust catalogue of view types, support Cross-Origin Resource Sharing (CORS), support static API resource generation, and support TEI-XML schema validation.</p>
+			<p>For over twenty years the Text Encoding Initiative (TEI) has managed and developed a set of encoding guidelines for the representation of humanities, social science, and linguistics -- to preserve and share -- texts in digital form. Using the Extensible Markup Language (XML) as its backbone, TEI is the generally accepted encoding model for the digital humanities. Due to XML’s extensible nature, It can often be difficult to share these files and even more problematic to make them interoperable. The goal of our student project was to build a prototype Application Programming Interface (API) for TEI-XML documents that provides greater interoperability while at the same time is easy to use by an audience with backgrounds in the humanities, social sciences, and linguistics. Currently, we have produced an API that, once uploaded to a directory containing TEI-XML files, can return multiple views of that file using a Uniform Resource Identifier (URI) as its query method.</p>
+			
+			<p>Delivering a working API prototype into the hands of both users and developers has opened the doors to new avenues of research and development. Future iterations of this prototype intend to:
+			<ul>
+				<li>Provide a more robust catalogue of view types
+					<ul>
+						<li>The return of both formatted and unformatted “text” views.</li>
+						<li>When returning a listing of the contents of a “specific element”, the API should be able to return both unique and multiple occurrence views in multiple data formats (text, HTML, JSON, etc...)</li>
+					</ul>
+				<li>Allow control over an unlimited set of TEI-XML files</li>
+				<li>Support TEI-XML schema validation</li>
+				<li>Support static API resource generation</li>
+					<ul>
+						<li>Currently, the API dynamically queries the TEI-XML file each time a request is made.</li>
+						<li>If a researcher has published their TEI-XML file, more than likely they will not be modifying that document on a regular basis.</li>
+						<li>Future versions should acknowledge this behavior and create static JSON files to hold the data needed for requested views and be able to check for new versions of TEI-XML files and react appropriately.</li>
+					</ul>
+				<li>Support Cross-Origin Resource Sharing (CORS)</li>
+			</ul>
+			</p>
+			
 			<p>The apitext API was directly inspired by <a href="https://jtei.revues.org/979">this journal article</a> written by <a href ="https://jtei.revues.org/979#authors">Desmond Schmidt</a>.</p>
 
 		</section>
@@ -136,7 +156,7 @@
 
 	<div id="footer_wrap" class="outer">
 		<footer class="inner">
-			<p>Copyright 2016 Chris Sumption, Michael Andrea, Guiyan Bai</p>
+			<p>Copyright 2016 <a href="http://chrissumption.com/">Chris Sumption</a>, Michael Andrea, Guiyan Bai</p>
 		</footer>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
