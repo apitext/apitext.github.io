@@ -27,6 +27,7 @@
 					<li><a href="#install">install</a></li>
 					<li><a href="#use">use</a></li>
 					<li><a href="#about">about</a></li>
+					<li><a href="http://chrissumption.com/apitext_demo_v2/">demo</a></li>
 					<li><a href="video.html">media</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
@@ -47,21 +48,11 @@
 
 			<h3>what is apitext?</h3>
 
-			<p>Apitext is a prototype RESTful Application Programing Interface (API) for TEI-XML Transcriptions. Once uploaded to a TEI-XML folder on your website, it exposes a series of Uniform Resource Identifiers (URI). By using these identifier endpoints, a user can retrieve specific information from a TEI-XML file.</p>
+			<p>Apitext is a student built prototype RESTful Application Programing Interface (API) for TEI-XML Transcriptions. Once uploaded to a TEI-XML folder on a website, it exposes a series of Uniform Resource Identifiers (URI). By using these identifier endpoints, a user can retrieve specific information from a TEI-XML file. It's probably easier to show you what our API does. Check out a live demonstration <a href="http://chrissumption.com/apitext_demo_v2/">here</a>.</p>
 			
 			<img class="infographic" src="images/infographic_apitext.png"/>
 			
-			<p>Currently, our student built experimental prototype only manages one TEI-XML file and only supports URI requests from the same domain as the API itself. Future iterations of this prototype intend to:</p>
-			
-			<ul>
-				<li>Provide a more robust catalogue of view types</li>
-				<li>Allow control over an unlimited set of TEI-XML files</li>
-				<li>Support TEI-XML schema validation</li>
-				<li>Support static API resource generation</li>
-				<li>Support Cross-Origin Resource Sharing (CORS)</li>
-			</ul>
-
-			<p>It's probably easier to show you what our API does, rather than tell you about it. Check out a live demonstration of apitext <a href="">here</a>.</p>
+			<p>Currently, our prototype only manages one TEI-XML file and only supports URI requests from the same domain as the API itself. To find out about future development plans, please see our <a href="#about">"about the project"</a> section.</p>
 
 			<h3 id="install" class="anchor">how do I install apitext?</h3>
 
@@ -130,26 +121,58 @@
 			<h3 id="about" class="anchor">about the project</h3>
 			<p>For over twenty years the Text Encoding Initiative (TEI) has managed and developed a set of encoding guidelines for the representation of humanities, social science, and linguistics -- to preserve and share -- texts in digital form. Using the Extensible Markup Language (XML) as its backbone, TEI is the generally accepted encoding model for the digital humanities. Due to XML’s extensible nature, It can often be difficult to share these files and even more problematic to make them interoperable. The goal of our student project was to build a prototype Application Programming Interface (API) for TEI-XML documents that provides greater interoperability while at the same time is easy to use by an audience with backgrounds in the humanities, social sciences, and linguistics. Currently, we have produced an API that, once uploaded to a directory containing TEI-XML files, can return multiple views of that file using a Uniform Resource Identifier (URI) as its query method.</p>
 			
+			<p>The apitext API was directly inspired by <a href="https://jtei.revues.org/979">this journal article</a> written by <a href ="https://jtei.revues.org/979#authors">Desmond Schmidt</a>.</p>
+			
 			<p>Delivering a working API prototype into the hands of both users and developers has opened the doors to new avenues of research and development. Future iterations of this prototype intend to:
-			<ul>
-				<li>Provide a more robust catalogue of view types
+			<dl>
+				
+				<dt>Provide a more robust catalogue of view types</dt>
+				<dd>
 					<ul>
 						<li>The return of both formatted and unformatted “text” views.</li>
 						<li>When returning a listing of the contents of a “specific element”, the API should be able to return both unique and multiple occurrence views in multiple data formats (text, HTML, JSON, etc...)</li>
+						<li>The return of element attribute metadata views.</li>
 					</ul>
-				<li>Allow control over an unlimited set of TEI-XML files</li>
-				<li>Support TEI-XML schema validation</li>
-				<li>Support static API resource generation</li>
+				</dd>
+				
+				<dt>Allow control over an unlimited set of TEI-XML files</dt>
+				<dd>
+					<ul>
+						<li>Currently, this version of the prototype is capable of controlling only one TEI-XML file.</li>
+						<li>Future versions will be able to control whole libraries of TEI-XML files.</li>
+					</ul>
+				</dd>
+				
+				<dt>Support TEI-XML schema validation</dt>
+				<dd>
+					<ul>
+						<li>This version of the prototype does not support schema validation; it assumes the provided XML document is well formed XML.</li>
+						<li>Future versions will be able to return information about whether or not the document is valid XML and if it is valid TEI.</li>
+					</ul>
+				</dd>
+				
+				<dt>Support static API resource generation</dt>
+				<dd>
 					<ul>
 						<li>Currently, the API dynamically queries the TEI-XML file each time a request is made.</li>
 						<li>If a researcher has published their TEI-XML file, more than likely they will not be modifying that document on a regular basis.</li>
 						<li>Future versions should acknowledge this behavior and create static JSON files to hold the data needed for requested views and be able to check for new versions of TEI-XML files and react appropriately.</li>
 					</ul>
-				<li>Support Cross-Origin Resource Sharing (CORS)</li>
-			</ul>
+				</dd>
+				
+				<dt>Support Cross-Origin Resource Sharing (CORS)</dt>
+				<dd>
+					<ul>
+						<li>Currently, clients of the API are required to be located on the same server as the API.</li>
+						<li>Future versions should include functionality that allows users from other domains access to the API.</li>
+						<ul>
+							<li>Client domain registration support.</li>
+							<li>Documentation that would assist users but also educate users on the pros and cons of implementing this functionality.</li>					
+						</ul>
+					</ul>
+				</dd>
+			</dl>
 			</p>
-			
-			<p>The apitext API was directly inspired by <a href="https://jtei.revues.org/979">this journal article</a> written by <a href ="https://jtei.revues.org/979#authors">Desmond Schmidt</a>.</p>
 
 		</section>
 	</div>
